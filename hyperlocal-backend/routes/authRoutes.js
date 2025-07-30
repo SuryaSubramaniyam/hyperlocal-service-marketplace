@@ -2,7 +2,8 @@ import express from 'express';
 import { register, login, updateUser } from '../controllers/authControllers.js';
 import authenticate, { Authorize } from '../middleware/authMiddleware.js';
 import { updateProviderProfile } from "../controllers/providerController.js";
-import User from '../models/User.js'; // ✅ Corrected import
+import { User } from '../models/User.js';
+// ✅ Corrected import
 
 const router = express.Router();
 

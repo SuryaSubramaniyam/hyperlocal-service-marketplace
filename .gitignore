@@ -5,3 +5,10 @@ node_modules/
 /uploads/
 dist/
 build/
+
+# Logs
+logs/
+*.log
+
+# OS files
+.DS_Store

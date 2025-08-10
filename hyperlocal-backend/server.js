@@ -19,11 +19,10 @@ const app = express();
 // ✅ Allowed Origins
 const allowedOrigins = [
   "http://localhost:5173", // local dev
-  "https://hyperlocal-service-marketplace-two.vercel.app", // old deploy (optional)
   "https://hyperlocal-service-marketplace-7tqa8l48h.vercel.app" // current Vercel deploy
 ];
 
-// ✅ CORS middleware
+// ✅ CORS middleware (with exposed headers for cookies)
 app.use(cors({
   origin: function (origin, callback) {
     if (!origin || allowedOrigins.includes(origin)) {
@@ -32,7 +31,9 @@ app.use(cors({
       callback(new Error("Not allowed by CORS"));
     }
   },
-  credentials: true
+  credentials: true,
+  allowedHeaders: ["Content-Type", "Authorization"],
+  exposedHeaders: ["Set-Cookie"] // ✅ Allow browser to see Set-Cookie
 }));
 
 // ✅ Middleware for parsing JSON, cookies, and form-data

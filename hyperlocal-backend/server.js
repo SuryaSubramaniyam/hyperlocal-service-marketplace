@@ -19,8 +19,10 @@ const app = express();
 // ✅ Allowed Origins
 const allowedOrigins = [
   "http://localhost:5173", // local dev
-  "https://hyperlocal-service-marketplace-two.vercel.app" // your Vercel frontend
+  "https://hyperlocal-service-marketplace-two.vercel.app", // old deploy (optional)
+  "https://hyperlocal-service-marketplace-7tqa8l48h.vercel.app" // current Vercel deploy
 ];
+
 // ✅ CORS middleware
 app.use(cors({
   origin: function (origin, callback) {

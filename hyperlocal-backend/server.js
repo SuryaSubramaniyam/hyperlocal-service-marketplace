@@ -19,7 +19,7 @@ const app = express();
 // ✅ Allowed Origins
 const allowedOrigins = [
   "http://localhost:5173", // local dev
-  "https://hyperlocal-service-marketplace-igx1g8w8k.vercel.app", // current Vercel deploy
+  "https://hyperlocal-service-marketplace-f166u1tzx.vercel.app", // current Vercel deploy
 ];
 
 // ✅ CORS middleware (with exposed headers for cookies)
